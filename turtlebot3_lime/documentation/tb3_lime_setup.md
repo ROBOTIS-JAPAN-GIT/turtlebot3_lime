@@ -75,11 +75,13 @@ $ cmake .. -DBUILD_EXAMPLES=true -DCMAKE_BUILD_TYPE=release -DFORCE_RSUSB_BACKEN
 
 Realsense D435i内部のファームウェアのバージョンをIntel RealSense SDK 2.0のバージョンと合わせる必要があります．
 
-Realsense D435iを Jetson Orin Nano を通して，セットアップを行います．
+[Realsense 公式サイト](https://dev.realsenseai.com/docs/firmware-releases-d400/)から，
+Version-5.16.0.1を``Downloads``フォルダにダウンロードしてください．
+
+Realsense D435i内臓ファームウェアを Jetson Orin Nano から書き込みます
 ```
-$ cd ~/Downloads/ && curl -sSL --output ./Signed_Image_UVC_5_16_0_1.zip https://www.intelrealsense.com/download/23422/?tmstv=1713899242
+$ cd ~/Downloads/
 $ unzip ./Signed_Image_UVC_5_16_0_1.zip
-$ cd ./Signed_Image_UVC_5_16_0_1/
 $ rs-fw-update -f ./Signed_Image_UVC_5_16_0_1.bin
 ```
 
